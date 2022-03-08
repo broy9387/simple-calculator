@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CALCULATOR</title>
+</head>
+<style>
+body
+{
+    background-color: coral;
+}
+#container 
+{
+    width: 270px;
+    height: 320px;
+    background-color: white;
+    margin: 0px auto;  /* move to center  */
+    border-top: 40px groove red;
+    border-bottom: 40px ridge red;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px black;
+    
+}
+input[type=button]:hover
+{
+   color: rgba(230, 110, 25, 0.781);
+   font-size:26px ;
+   background-color: rgb(100, 228, 41);
+}
+#h
+{
+    width: 95%;
+    height: 30px;
+    margin: 6px;
+    font-size: 20px;
+}
+input[type=button]
+{
+    width: 60px;
+    height: 30px;
+    margin: 2px;
+    font-size: 25px;
+}
+#head
+{
+    color: rgb(21, 51, 219);
+    font-family: Comic Sans MS;
+}
+.foot
+{
+    text-align: center;
+    font-family: Calibri;
+    color:rgb(230, 27, 71);
+}
+</style>
+
+<body>
+    
+    <h2 id="head" style="text-align: center;"><strong>CALCULATOR</strong></h2>
+    
+     <br>
+    <div id="container">
+        <form name="form">
+        <input type="text" name="result" id="h">
+        <br>
+        <input type="button" value="1" onclick="document.form.result.value+=1">
+        <input type="button" value="2" onclick="document.form.result.value+=2">
+        <input type="button" value="3" onclick="document.form.result.value+=3">
+        <input type="button" value="4" onclick="document.form.result.value+=4">
+        <br><br>
+        <input type="button" value="5" onclick="document.form.result.value+=5">
+        <input type="button" value="6"onclick="document.form.result.value+=6">
+        <input type="button" value="7" onclick="document.form.result.value+=7">
+        <input type="button" value="8" onclick="document.form.result.value+=8">
+        <br><br>
+        <input type="button" value="9" onclick="document.form.result.value+=9">
+        <input type="button" value="0" onclick="document.form.result.value+=0">
+        <input type="button" value="." onclick="document.form.result.value+= '.' ">
+        <input type="button" value="+" onclick="document.form.result.value+= '+' ">
+        <br><br>
+        <input type="button" value="-" onclick="document.form.result.value+='-'">
+        <input type="button" value="x" onclick="document.form.result.value+='*'">
+        <input type="button" value="/" onclick="document.form.result.value+='/'">
+        <input type="button" value="%" onclick="document.form.result.value+='%'">
+        <br><br>
+
+        <input style="width: 35%;height:40px" type="button" value="=" 
+        onclick="document.form.result.value = eval(document.form.result.value)">
+
+        <input style="width: 28%;height:40px" type="button" value="c" 
+        onclick="document.form.result.value = ' ' ">    
+        
+        <input style="width: 28%;height:40px" type="button" value="del" 
+        onclick= "backSpace()">
+
+         </form>
+</div>
+<br>
+
+</body>
+<script>
+
+function backSpace()
+{
+    var prevalue=document.form.result.value;
+    document.form.result.value=prevalue.substr(0,prevalue.length-1);
+}
+
+</script>
+</html>
